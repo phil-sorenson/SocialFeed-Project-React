@@ -1,0 +1,5 @@
+= Social Feed Project = [12-2-2022]
+
+-= Objective =-
+• Create some 'Create' and 'Read' Functionality => Top <form>: Name and Post boxes ; Bottom <form>: Box to show all posts w/ 👍 & 👎 
+        ('Like' or 'Dislike' buttons DO NOT have to be thumbs up or Thumbs down ---> Can be text or something else)
