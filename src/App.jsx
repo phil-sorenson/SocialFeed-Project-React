@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import CreatePosts from './Components/CreatePosts/CreatePosts';
 
 
 function App() {
 
-  const [entries, setEntries] = useState()
-  
+  const [posts, setPosts] = useState([{}]);
+
+  function createPost(post) {
+    let tempPost = [...post, posts];
+
+    setPosts(tempPost);
+  }
+
+
   return (
     <div>
-      <h3>Hello World!</h3>
+    
+      <CreatePosts createPostProperty={createPost} />
     </div>
+  
+
   );
 }
 
