@@ -5,22 +5,22 @@ import './App.css';
 
 function App() {
 
-  const [posts, setPosts] = useState([{'name': 'Phil S' , 'post': 'Hello'}]);
+  const [entries, setEntries] = useState([{'name': 'Phil S' , 'post': 'Hello'}]);
 
   function createPost(post) {
-    let tempPost = [post,...posts];
+    let tempPost = [post,...entries];
 
-    setPosts(tempPost);
+    setEntries(tempPost);
   }
 
 
   return (
     <div>  
       <div className='border-box'>
-        <CreatePosts createPostProperty= {createPost} />
+        <CreatePosts createPost= {createPost} />
       </div>
       <div className='border-box'>  
-        <Post posts= {posts}/>
+        <Post entries= {entries}/>
       </div>
     </div>
   

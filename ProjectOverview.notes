@@ -3,3 +3,54 @@
 -= Objective =-
 • Create some 'Create' and 'Read' Functionality => Top <form>: Name and Post boxes ; Bottom <form>: Box to show all posts w/ 👍 & 👎 
         ('Like' or 'Dislike' buttons DO NOT have to be thumbs up or Thumbs down ---> Can be text or something else)
+
+//** Button code from codePen
+//     let btn1 = document.querySelector('green');
+//     let btn2 = document.querySelector('red');
+
+//     btn1.addEventListener('click', function() {
+  
+//         if (btn2.classList.contains('red')) {
+//             btn2.classList.remove('red');
+//         } 
+//         this.classList.toggle('green');
+  
+// });
+
+//     btn2.addEventListener('click', function() {
+  
+//         if (btn1.classList.contains('green')) {
+//             btn1.classList.remove('green');
+//         } 
+//         this.classList.toggle('red');
+  
+// });
+
+<script src="https://use.fontawesome.com/fe459689b4.js"></script>
+<button onClick={} className="btn" id="green"><i className="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
+<button onClick={} className="btn" id="red"><i className="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
+
+.button-body{
+    margin: 40px;
+  }
+  
+.button {
+cursor: pointer;
+outline: 0;
+color: #AAA;
+
+}
+
+.btn:focus {
+outline: none;
+}
+
+.green{
+color: green;
+}
+
+.red{
+color: red;
+}
+
+*/

@@ -22,7 +22,7 @@ const CreatePosts = (props) => {
         };
 
         console.log(newPost);
-        props.createPostProperty(newPost)
+        props.createPost(newPost)
     }
 //* event.target.value is the value that is being inputted and 
     return ( 
@@ -30,12 +30,12 @@ const CreatePosts = (props) => {
         <form onSubmit={handleSubmit} className='form-grid'>
             <div className='form-group'>
                 <label>Name</label>
-                <input type='text' value= {name} onChange={(event)=> setName(event.target.value)}/>
+                <input style={{'margin':'1em'}} type='text' value= {name} onChange={(event)=> setName(event.target.value)}/>
             </div>
             <div className='form-group'>    
                 <label>Post</label>
-                <textarea rows='4' cols='50' type='text' value={post} onChange={(event)=> setPost(event.target.value) }/>
-                <button type='submit' className='btn btn-primary' style={{'margin': '1em'}}>CREATE</button>
+                <textarea style={{'margin':'1em'}} rows='4' cols={'50'} type='text' value={post} onChange={(event)=> setPost(event.target.value) }/>
+                <button type='submit' className='btn btn-primary' style={{'margin': '1em','fontSize':'5'}}>CREATE</button>
             </div>
         </form>
         
