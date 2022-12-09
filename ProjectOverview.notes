@@ -1,56 +1,78 @@
 = Social Feed Project = [12-2-2022]
 
--= Objective =-
-• Create some 'Create' and 'Read' Functionality => Top <form>: Name and Post boxes ; Bottom <form>: Box to show all posts w/ 👍 & 👎 
-        ('Like' or 'Dislike' buttons DO NOT have to be thumbs up or Thumbs down ---> Can be text or something else)
+-= Code Snippets =-
+//* Check box (use 'ThumbUpOffAltIcon' icon instead of 'CheckIcon')
+import { ThumbUpOffAltIcon } from '@mui/icons-material/ThumbUpOffAlt';
 
-//** Button code from codePen
-//     let btn1 = document.querySelector('green');
-//     let btn2 = document.querySelector('red');
+import * as React from 'react';
+import { ThumbUpOffAltIcon } from '@mui/icons-material/ThumbUpOffAlt';
+import ToggleButton from '@mui/material/ToggleButton';
 
-//     btn1.addEventListener('click', function() {
-  
-//         if (btn2.classList.contains('red')) {
-//             btn2.classList.remove('red');
-//         } 
-//         this.classList.toggle('green');
-  
-// });
+export default function StandaloneToggleButton() {
+  const [selected, setSelected] = React.useState(false);
 
-//     btn2.addEventListener('click', function() {
-  
-//         if (btn1.classList.contains('green')) {
-//             btn1.classList.remove('green');
-//         } 
-//         this.classList.toggle('red');
-  
-// });
-
-<script src="https://use.fontawesome.com/fe459689b4.js"></script>
-<button onClick={} className="btn" id="green"><i className="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-<button onClick={} className="btn" id="red"><i className="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-
-.button-body{
-    margin: 40px;
-  }
-  
-.button {
-cursor: pointer;
-outline: 0;
-color: #AAA;
-
+  return (
+    <ToggleButton
+      value="check"
+      selected={selected}
+      onChange={() => {
+        setSelected(!selected);
+      }}
+    >
+      <CheckIcon />
+    </ToggleButton>
+  );
 }
 
-.btn:focus {
-outline: none;
-}
 
-.green{
-color: green;
-}
+//* Previous Thumbs up and down
+//* <HTML>
+<button className={`btn ${activeBtn === "like" ? "like-active" : ""}`} onClick={handleLikeClick}><span className='material-symbols-rounded'>thumbs_up</span>Like{likeCount}</button>
+<button className={`btn ${activeBtn === "dislike" ? "dislike-active" : ""}`} onClick={handleDislikeClick}><span className='material-symbols-rounded'>thumbs_down</span>Dislike{dislikeCount}</button>
 
-.red{
-color: red;
-}
+//* JS
+const [likeCount, setLikeCount] = useState(0);
+const [dislikeCount, setDislikeCount] = useState(0);
+const [activeBtn, setActiveBtn] = useState("none");
 
-*/
+    const handleLikeClick = () => {
+        
+        if (activeBtn === "none") {
+            setLikeCount (likeCount +1);
+            setActiveBtn("like");
+            return;
+        }
+
+        if (activeBtn === 'like'){
+            setLikeCount(likeCount - 1);
+            setActiveBtn("none");
+            return;
+          }
+        
+        if (activeBtn === "dislike") {
+        setLikeCount(likeCount + 1);
+        setDislikeCount(dislikeCount - 1);
+        setActiveBtn("like");
+        }
+    };
+
+    const handleDislikeClick = () => {
+        
+        if (activeBtn === "none") {
+            setDislikeCount(dislikeCount + 1);
+            setActiveBtn("dislike");
+            return;
+        }
+
+        if (activeBtn === 'dislike') {
+            setDislikeCount(dislikeCount - 1);
+            setActiveBtn("none");
+            return;
+        }
+
+        if (activeBtn === "like") {
+        setDislikeCount(dislikeCount + 1);
+        setLikeCount(likeCount - 1);
+        setActiveBtn("dislike");
+        }
+    };

@@ -1,5 +1,6 @@
 /** 
 * ToDo: Code it where the previous input goes away after clicking CREATE
+* ToDo: Style => => Create Button, Align text boxes, figure out what kind of stye
 ** CreatePost == AddEntryForm (weight-tracker)
 * ! Create a form with 2 input fields (1. w/ user's name 2. w/ the body of their posts) - each should be bound to it's own State variable
 * ! Code it where the previous input goes away after clicking CREATE
@@ -7,6 +8,7 @@
 
 import React, { useState } from 'react';
 import './CreatePosts.css';
+import { TextareaAutosize } from '@mui/material';
 
 const CreatePosts = (props) => {
    
@@ -34,7 +36,8 @@ const CreatePosts = (props) => {
             </div>
             <div className='form-group'>    
                 <label>Post</label>
-                <textarea style={{'margin':'1em'}} rows='4' cols={'50'} type='text' value={post} onChange={(event)=> setPost(event.target.value) }/>
+                <TextareaAutosize aria-label="minimum height" minRows={3} placeholder="Post Here" style={{ width: 200 }}/>
+                <textarea placeholder='Post Here'style={{'margin':'1em'}} rows='4' cols={'50'} type='text' value={post} onChange={(event)=> setPost(event.target.value) }/>
                 <button type='submit' className='btn btn-primary' style={{'margin': '1em','fontSize':'5'}}>CREATE</button>
             </div>
         </form>
