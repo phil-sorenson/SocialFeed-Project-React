@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import CreatePosts from './Components/CreatePosts/CreatePosts';
 import Post from './Components/Posts/Post';
 import './App.css';
+import DisplayPosts from './Components/DisplayPosts/DisplayPosts';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
         <CreatePosts createPost= {createPost} />
       </div>
       <div className='border-box'>  
-        <Post entries= {entries}/>
+        <DisplayPosts entries= {entries}/>
       </div>
     </div>
   

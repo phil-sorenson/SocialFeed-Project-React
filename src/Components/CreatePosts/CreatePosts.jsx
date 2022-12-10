@@ -9,6 +9,8 @@
 import React, { useState } from 'react';
 import './CreatePosts.css';
 import { TextareaAutosize } from '@mui/material';
+import Button from '@mui/material/Button';
+// import Stack from '@mui/material.Stack';
 
 const CreatePosts = (props) => {
    
@@ -36,9 +38,10 @@ const CreatePosts = (props) => {
             </div>
             <div className='form-group'>    
                 <label>Post</label>
-                <TextareaAutosize aria-label="minimum height" minRows={3} placeholder="Post Here" style={{ width: 200 }}/>
-                <textarea placeholder='Post Here'style={{'margin':'1em'}} rows='4' cols={'50'} type='text' value={post} onChange={(event)=> setPost(event.target.value) }/>
-                <button type='submit' className='btn btn-primary' style={{'margin': '1em','fontSize':'5'}}>CREATE</button>
+                <TextareaAutosize type='text' aria-label="minimum height" minRows={3} placeholder="Post Here" style={{ width: 200, 'margin-left': '1em' }} value={post} 
+                onChange={(event)=> setPost(event.target.value) }/>
+                <Button type='submit' variant="contained" style={{'margin-left':'1em'}}>Create</Button>
+                {/* <button type='submit'  style={{'margin': '1em','fontSize':'5'}}>CREATE</button> */}
             </div>
         </form>
         

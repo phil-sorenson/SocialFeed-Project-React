@@ -1,28 +1,26 @@
 = Social Feed Project = [12-2-2022]
 
--= Code Snippets =-
-//* Check box (use 'ThumbUpOffAltIcon' icon instead of 'CheckIcon')
-import { ThumbUpOffAltIcon } from '@mui/icons-material/ThumbUpOffAlt';
+Learning Objective
 
-import * as React from 'react';
-import { ThumbUpOffAltIcon } from '@mui/icons-material/ThumbUpOffAlt';
-import ToggleButton from '@mui/material/ToggleButton';
+To further familiarize yourself with React.js by creating an interactive frontend application with CREATE & READ functionality.
 
-export default function StandaloneToggleButton() {
-  const [selected, setSelected] = React.useState(false);
+Technologies
+React, JavaScript, HTML, CSS
 
-  return (
-    <ToggleButton
-      value="check"
-      selected={selected}
-      onChange={() => {
-        setSelected(!selected);
-      }}
-    >
-      <CheckIcon />
-    </ToggleButton>
-  );
-}
+User Stories
+
+Total Unweighted Project Points: /45
+Total Weighted Project Points: /50
+
+(5 points): As a developer, I want to make at least 7 good, consistent commits.
+(5 points): As a developer, I want to use the Create-React-App to create my React project.
+(5 points): As a developer, I want to display all posts (name, body, & liked status) within a feed on the main page.
+(10 points): As a developer, I want to create “like” and “dislike” buttons so that I can visually show & toggle between “liking” and “disliking” a post.
+(10 points): As a developer, I want to create a form on a separate component so that I can add a new post to the main feed.
+(5 points): As a developer, I want to create a minimum of three React components and use them within my application (EX: CreatePost, DisplayPosts, Post, NavBar)
+(5 points): As a developer, I want to have an aesthetically pleasing user interface to ensure a great user experience
+BONUS:
+(5 points): As a developer, I want to add a date to all posts and post creations.
 
 
 //* Previous Thumbs up and down

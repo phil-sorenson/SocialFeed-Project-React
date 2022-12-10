@@ -16,48 +16,28 @@ import ThumbUpOffAlt  from '@mui/icons-material/ThumbUpOffAlt';
 
 const Post = (props) => {
 
-    const [selected,setSelected] = useState(false)
-    // const customTheme = createTheme({
-    //     palette: {
-    //         primary: {
-    //             main: darkslategray[2f4f4f],
-
-
-    //         },
-    //     },
-    // });
-
-    // const StyledToggleButton = styled(ToggleButton)
+    const [selected,setSelected] = useState(false);
+    
 
     return ( 
-
-            
-        <div className='container'>
-            {props.entries.map((post, index) =>{
-                return (
-                <div key={index}>    
-                    <div id='name'>
-                        {post.name}
-                    </div>
-                    <br/>
-                    <div id='post-body'>
-                        {post.post}
-                    </div>
-                    <div >
-                        <ToggleButton className='toggle-button' value="thumb-up-off-alt" selected={selected} onChange={() => {setSelected(!selected);}}>
-                            <ThumbUpOffAlt className='thumb'/>
-                        </ToggleButton>
-                    </div>
-                    <hr/>
-                    <br/>
-                </div>
-                                        
-                )
-            })}
+              
+        <div>    
+            <div className='name-container'>
+               <b>{props.entry.name}</b> 
+            </div>
+            <br/>
+            <div className='post-body-container'>
+                {props.entry.post}
+            </div>
+            <div className='like-button-container'>
+                <ToggleButton className='toggle-button' value="thumb-up-off-alt" selected={selected} onChange={() => {setSelected(!selected);}}>
+                    <ThumbUpOffAlt className='thumb'/>
+                </ToggleButton>
+            </div>
+            <hr/>
+            <br/>
         </div>
-    
-    
-    
+                                
     
      );
 };

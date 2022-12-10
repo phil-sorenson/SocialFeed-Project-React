@@ -1,48 +1,38 @@
-/**
+/** Use accordion
     // Todo: Create a feed where all posts will be displayed in your app ---> 
 **        All posts should be passed into this component using PROPS ---> 
 **        Utilize "map" method to map each post to its own Post component
 **        similar to the 'EntriesChartTracker.jsx'
 ** Use 'stacks' for my post display
- 
 */
 
-// const DisplayPosts = (props) => {
-//     return ( 
-        
-        
-//      );
-// }
+import React from 'react';
+import Post from '../Posts/Post';
+
+const DisplayPosts = (props) => {
+    return ( 
+
+        <div>
+           {props.entries.map((entry) => {
+                return (
+                    <Post entry={entry}/>
+                )
+            })} 
+        </div>
+
+
+     );
+}
  
-// export default DisplayPosts;
+export default DisplayPosts;
+
+
+
+
 
 //* Vertical stacks
 
-// import * as React from 'react';
-// import Box from '@mui/material/Box';
-// import Paper from '@mui/material/Paper';
-// import Stack from '@mui/material/Stack';
-// import { styled } from '@mui/material/styles';
 
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-// }));
-
-// export default function BasicStack() {
-//   return (
-//     <Box sx={{ width: '100%' }}>
-//       <Stack spacing={2}>
-//         <Item>Item 1</Item>
-//         <Item>Item 2</Item>
-//         <Item>Item 3</Item>
-//       </Stack>
-//     </Box>
-//   );
-// }
 
 
 
