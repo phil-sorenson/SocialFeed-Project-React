@@ -10,6 +10,7 @@
 
 /* Whole Post */
 .entry-parent-container {
+  border-width: 60%;
   border-style: outset;
   margin-right: auto;
   margin-left: auto;
