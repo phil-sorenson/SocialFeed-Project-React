@@ -1,7 +1,9 @@
-.border-box {
-    border: 1px;
-    border-style: solid;
-    border-color: black;
-    margin: 1em;
+.create-post-container {
+    margin-top: 2em;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+
+    margin-bottom: 1em;
     padding: 1em;
 }

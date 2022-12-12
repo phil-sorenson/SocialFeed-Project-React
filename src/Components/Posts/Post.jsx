@@ -12,31 +12,37 @@ import React, { useState } from 'react'
 import './Post.css';
 import ToggleButton  from '@mui/material/ToggleButton';
 import ThumbUpOffAlt  from '@mui/icons-material/ThumbUpOffAlt';
-// import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+
+
+
 
 const Post = (props) => {
 
     const [selected,setSelected] = useState(false);
     
-
-    return ( 
-              
-        <div>    
+    return (
+        
+        <div className='entry-parent-container'>
+        <form>
             <div className='name-container'>
-               <b>{props.entry.name}</b> 
+                <b>{props.post.name}</b> 
             </div>
             <br/>
-            <div className='post-body-container'>
-                {props.entry.post}
+            <div className='post-container'>
+                {props.post.post}
             </div>
-            <div className='like-button-container'>
+            <div className='toggle-button-container'>
                 <ToggleButton className='toggle-button' value="thumb-up-off-alt" selected={selected} onChange={() => {setSelected(!selected);}}>
                     <ThumbUpOffAlt className='thumb'/>
                 </ToggleButton>
             </div>
-            <hr/>
-            <br/>
+        </form>
         </div>
+    
+        
+            
+                    
+
                                 
     
      );

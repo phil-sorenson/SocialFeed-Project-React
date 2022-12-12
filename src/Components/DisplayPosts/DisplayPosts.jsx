@@ -10,12 +10,15 @@ import React from 'react';
 import Post from '../Posts/Post';
 
 const DisplayPosts = (props) => {
+
     return ( 
 
         <div>
-           {props.entries.map((entry) => {
+           {props.entries.map((post, index) => {
                 return (
-                    <Post entry={entry}/>
+                    <div key={index}>
+                        <Post post={post}/>
+                    </div>
                 )
             })} 
         </div>

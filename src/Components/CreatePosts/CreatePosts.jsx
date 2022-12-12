@@ -8,9 +8,10 @@
 
 import React, { useState } from 'react';
 import './CreatePosts.css';
-import { TextareaAutosize } from '@mui/material';
+import Form from 'react-bootstrap/Form'
+
 import Button from '@mui/material/Button';
-// import Stack from '@mui/material.Stack';
+
 
 const CreatePosts = (props) => {
    
@@ -31,19 +32,35 @@ const CreatePosts = (props) => {
 //* event.target.value is the value that is being inputted and 
     return ( 
 
-        <form onSubmit={handleSubmit} className='form-grid'>
-            <div className='form-group'>
-                <label>Name</label>
-                <input style={{'margin':'1em'}} type='text' value= {name} onChange={(event)=> setName(event.target.value)}/>
-            </div>
-            <div className='form-group'>    
-                <label>Post</label>
-                <TextareaAutosize type='text' aria-label="minimum height" minRows={3} placeholder="Post Here" style={{ width: 200, 'margin-left': '1em' }} value={post} 
-                onChange={(event)=> setPost(event.target.value) }/>
-                <Button type='submit' variant="contained" style={{'margin-left':'1em'}}>Create</Button>
-                {/* <button type='submit'  style={{'margin': '1em','fontSize':'5'}}>CREATE</button> */}
-            </div>
-        </form>
+        
+        <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" >
+                <Form.Label>Name</Form.Label>
+                <Form.Control type='text' value= {name} onChange={(event)=> setName(event.target.value)}/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label>Create Post Here</Form.Label>
+                <Form.Control type='text' as="textarea" rows={3} value={post} 
+                onChange={(event)=> setPost(event.target.value) } />
+            </Form.Group>
+            <Button type='submit' variant="contained" style={{'marginLeft':'1em'}}>Create</Button>
+        </Form>
+        
+
+
+        // <form  onSubmit={handleSubmit} className='entry-form-container'>
+        //     <div className='name-component'>
+        //         <label>Name</label>
+        //         <input style={{'margin':'1em'}} type='text' value= {name} onChange={(event)=> setName(event.target.value)}/>
+        //     </div>
+        //     <div className='post-component'>    
+        //         <label>Post</label>
+        //         <textarea className='post' type='text' placeholder="Post Here" style={{ 'margin-left': '1em' }} value={post} 
+        //         onChange={(event)=> setPost(event.target.value) }/>
+        //         <Button type='submit' variant="contained" style={{'margin-left':'1em'}}>Create</Button>
+                
+        //     </div>
+        // </form>
         
 
     );

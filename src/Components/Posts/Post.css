@@ -1,3 +1,6 @@
+
+
+
 /* Thumbs up/down */
 
 .toggle-button.MuiToggleButton-root.Mui-selected{
@@ -6,10 +9,15 @@
 }
 
 /* Whole Post */
-.whole-post {
-    border:1px;
-    border-color: black;
+.entry-parent-container {
+  border-style: outset;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1em;
+  box-shadow: 5em;
+  width: 60%;
 }
+
 
 /* .fa {
     font-size: 50px;
